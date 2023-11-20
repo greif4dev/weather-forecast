@@ -1,0 +1,41 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#conteiner{
+    display: flex;
+    flex-direction: column;
+    gap: white;
+}
+
+#item-1{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#item-2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.itens{
+    background-color: blue;
+    height: 13.5rem;
+    border: solid;
+}
