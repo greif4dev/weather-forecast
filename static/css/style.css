@@ -38,3 +38,9 @@ nav{
     height: 13.5rem;
     border: solid;
 }
+
+.searchBar{
+    width: 40rem;
+    height: 2.5rem;
+    border-radius: 1rem;
+}
