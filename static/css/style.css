@@ -18,7 +18,6 @@ nav{
 #conteiner{
     display: flex;
     flex-direction: column;
-    gap: white;
 }
 
 #item-1{
