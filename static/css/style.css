@@ -34,7 +34,7 @@ nav{
 }
 
 .itens{
-    background-color: blue;
+    background-color: rgb(6, 114, 238);
     height: 13.5rem;
     border: solid;
 }
@@ -43,4 +43,14 @@ nav{
     width: 40rem;
     height: 2.5rem;
     border-radius: 1rem;
+    border: none;
+    margin: 5px;
+    padding-left: 1%;
+    outline: none;
 }
+
+#searchArea{
+    display: flex;  
+    align-items: center;    
+}
+
