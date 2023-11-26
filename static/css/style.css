@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 body{
     background-color: black;
 }
@@ -31,6 +33,7 @@ nav{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Roboto', sans-serif;
 }
 
 .itens{
@@ -47,10 +50,23 @@ nav{
     margin: 5px;
     padding-left: 1%;
     outline: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    letter-spacing: -1px;
 }
 
 #searchArea{
     display: flex;  
-    align-items: center;    
+    align-items: center;
+    padding-bottom: 10px;    
+}
+
+#wheaterNow{
+    font-family: 'Roboto', sans-serif;
+    font-size: xx-large;
+    color: white;
+    font-weight: bold;
+    letter-spacing: -1px;
+    font-kerning: none;
 }
 
