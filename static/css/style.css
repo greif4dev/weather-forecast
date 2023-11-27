@@ -7,7 +7,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 body{
-    background-color: black;
+    background-color: rgb(6, 114, 238);
 }
 
 nav{
@@ -33,13 +33,10 @@ nav{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Roboto', sans-serif;
 }
 
 .itens{
-    background-color: rgb(6, 114, 238);
     height: 13.5rem;
-    border: solid;
 }
 
 .searchBar{
@@ -61,7 +58,7 @@ nav{
     padding-bottom: 10px;    
 }
 
-#wheaterNow{
+.font-title{
     font-family: 'Roboto', sans-serif;
     font-size: xx-large;
     color: white;
@@ -69,4 +66,15 @@ nav{
     letter-spacing: -1px;
     font-kerning: none;
 }
+
+#wheaterNow{
+    background-color: whitesmoke;
+    height: 10rem;
+    width: 30rem;
+}
+
+#wheaterNow > div{
+    display: flex;
+    justify-content: space-between;
+} 
 
