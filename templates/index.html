@@ -1,17 +1,15 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wheater Forecast</title>
-    <link rel="stylesheet" href="..\static\css\style.css">
-</head>
-<body>
+{% extends 'base.html'%}
+    {% block title %}
+        Wheater Forecast
+    {% endblock %}
+    {% block content %}
     <div id="conteiner">
         <nav class="itens">
             <div id="searchArea">
-                <input type="search" name="searchBar" id="searchBar" class="searchBar" placeholder="Previsão do tempo para...">
-                <img width="35" height="35" src="..\static\images\icons8-search-50.png" alt="search--v1"/>
+                <form action="/previsao" method="post">
+                    <input type="search" name="searchBar" id="searchBar" class="searchBar" placeholder="Previsão do tempo para...">
+                </form>
+                <img width="35" height="35" src="{{ url_for('static', filename='images/icons8-search-50.png')}}" alt="search--v1"/>
             </div>
             <br>
             <div id="Location"  class="font-title">Neste momento em Someplaceland.</div>
@@ -24,6 +22,7 @@
             <div id="weekForecast">PREVISAO LONGO PRAZO</div>
         </section>
     </div>
+    {% endblock %}
     <script src="..\static\js\index.js"></script>
 </body>
 </html>
