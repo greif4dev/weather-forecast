@@ -16,7 +16,7 @@ def getCity(cidadeUser):
     URL = f"https://pro.openweathermap.org/data/2.5/weather?q={cidadeUser}&lang=pt_br&APPID={API_KEY}&units=metric"
     response = requests.get(URL).json()
     data = WeatherData(
-        descricao = response.get('weather')[0].get('description'),
+        descricao = response.get('weather')[0].get('description').capitalize(),
         icon = response.get('weather')[0].get('icon'),
         temp = f"{int(response.get('main').get('temp'))}°",
         feels_like = f"A sensação térmica é de {int(response.get('main').get('feels_like'))}°",
