@@ -18,9 +18,9 @@ def getCity(cidadeUser):
     data = WeatherData(
         descricao = response.get('weather')[0].get('description'),
         icon = response.get('weather')[0].get('icon'),
-        temp = int(response.get('main').get('temp')),
-        feels_like = int(response.get('main').get('feels_like')),
-        wind = int(response.get('wind').get('speed')),
+        temp = f"{int(response.get('main').get('temp'))}°",
+        feels_like = f"A sensação térmica é de {int(response.get('main').get('feels_like'))}°",
+        wind = f"{int(response.get('wind').get('speed')*3.6)} Km/h",
         name = "Neste momento em "+response.get('name')
     )
     return data
@@ -28,6 +28,3 @@ def getCity(cidadeUser):
 def main(cityUser):
     weather_data = getCity(cityUser)
     return weather_data
-
-if __name__=="__main__":
-    print(getCity('Florianópolis'))
