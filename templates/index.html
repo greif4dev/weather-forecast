@@ -6,16 +6,29 @@
     <div id="conteiner">
         <nav class="itens">
             <div id="searchArea">
-                <form action="/previsao" method="post">
+                <form action="/" method="post">
                     <input type="search" name="searchBar" id="searchBar" class="searchBar" placeholder="Previsão do tempo para...">
                 </form>
                 <img width="35" height="35" src="{{ url_for('static', filename='images/icons8-search-50.png')}}" alt="search--v1"/>
             </div>
             <br>
-            <div id="Location"  class="font-title">Neste momento em Someplaceland.</div>
+            <div id="Location"  class="font-title">{{ data.name }}</div>
         </nav>
         <section class="itens" id="item-1">
-            <div id="wheaterNow"></div>
+            <div id="wheaterNow">
+                <p>{{ data.descricao }}</p>
+                <div>
+                    <div><img src="https://openweathermap.org/img/wn/{{ data.icon }}@2x.png" alt="Icon"></div>
+                    <div>
+                        <p>{{ data.temp }}</p>
+                        <p>{{ data.feels_like }}</p>
+                    </div>
+                    <div>
+                        <p>Vento</p>
+                        <p>{{ data.wind }}</p>
+                    </div>
+                </div>
+            </div>
             <div id="timeForecast">PREVISAO CURTO PRAZO</div>
         </section>
         <section class="itens" id="item-2">
@@ -23,6 +36,3 @@
         </section>
     </div>
     {% endblock %}
-    <script src="..\static\js\index.js"></script>
-</body>
-</html>

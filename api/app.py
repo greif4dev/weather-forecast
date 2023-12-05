@@ -1,23 +1,15 @@
-import requests
-from flask import Flask, render_template, request, send_from_directory
+from flask import Flask, render_template, request
+from weather import main as getWeather
 
 app= Flask(__name__, template_folder='../templates', static_folder='../static')
 
-API_KEY = "40fc25677a830026dc3505d99e37020d"
-
-@app.route("/")
+@app.route("/", methods=['GET', 'POST'])
 def index():
-    return render_template("index.html")
-
-@app.route("/previsao", methods=['POST'])
-def Previsao():
-    cidadeUser = request.form['searchBar']
-    URL = f"https://pro.openweathermap.org/data/2.5/weather?q={cidadeUser}&APPID={API_KEY}"
-    response = requests.get(URL)
-    if response.status_code == 200:
-        return response.json()
-    else:
-        return None
+    data = None
+    if request.method== 'POST':
+        city = request.form['searchBar']
+        data = getWeather(city)
+    return render_template("index.html", data=data)
 
 if __name__ == '__main__':
     app.run(debug=True)
