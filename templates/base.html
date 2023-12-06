@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
-    <title>{% block title %} {% endblock %}</title>
+    <title color="blue">{% block title %} {% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     {% block content %}
     {% endblock %}
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+    <script src="https://kit.fontawesome.com/98beecc813.js" crossorigin="anonymous"></script>
 </body>
 </html>

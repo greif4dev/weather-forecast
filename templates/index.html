@@ -3,6 +3,16 @@
         Wheater Forecast
     {% endblock %}
     {% block content %}
+    <div id="menu">
+        <div class="close-btn" onclick="toggleMenu()">×</div>
+        <a href="#"><i class="fa-solid fa-user" style="color: #ffffff;"></i>ㅤPerfil</a>
+        <a href="#"><i class="fa-solid fa-clock-rotate-left"></i>ㅤHistórico</a>
+        <a href="#"><i class="fa-solid fa-map-location-dot" style="color: #ffffff;"></i>ㅤMapa</a>
+        <div class="logout">
+          <a href="#"><i class="fa-solid fa-right-from-bracket" style="color: #ffffff;"></i>ㅤLogout</a>
+        </div>
+      </div>
+      <div id="menu-icon" onclick="toggleMenu()">☰</div>
     <div id="conteiner">
         <nav class="itens">
             <div id="searchArea">
@@ -16,23 +26,22 @@
         </nav>
         <section class="itens" id="item-1">
             <div id="wheaterNow">
-                <p>{{ data.descricao }}</p>
                 <div>
-                    <div><img src="https://openweathermap.org/img/wn/{{ data.icon }}@2x.png" alt="Icon"></div>
-                    <div>
-                        <p>{{ data.temp }}</p>
-                        <p>{{ data.feels_like }}</p>
+                    <div class="descri">
+                        <p>{{ data.descricao }}</p>
+                        <img src="https://openweathermap.org/img/wn/{{ data.icon }}@2x.png" alt="Icon" id="icon" onerror="this.style.display='none'">
                     </div>
-                    <div>
-                        <p>Vento</p>
-                        <p>{{ data.wind }}</p>
+                    <div class="temp">
+                        <p class="values" id="temperatura">{{ data.temp }}</p>
+                        {{ previa }}
+                        <p class="indices">{{ data.feels_like }}</p>
+                    </div>
+                    <div class="wind">
+                        <p class="values">{{ data.wind }}</p>
+                        <p class="indices">{{ vento }}</p>
                     </div>
                 </div>
             </div>
-            <div id="timeForecast">PREVISAO CURTO PRAZO</div>
-        </section>
-        <section class="itens" id="item-2">
-            <div id="weekForecast">PREVISAO LONGO PRAZO</div>
         </section>
     </div>
     {% endblock %}

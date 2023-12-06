@@ -1,18 +1,12 @@
-let tempoAgora = '';
+function toggleMenu() {
+    var menu = document.getElementById("menu");
+    var menuIcon = document.getElementById("menu-icon");
 
-tempoAgora += 
-    `
-    <p>descricao</p>
-    <div>
-        <div><p>icon</p></div>
-        <div>
-            <p>temp</p>
-            <p>descricao temp</p>
-        </div>
-        <div>
-            <p>direcao vento</p>
-            <p>sentido<br>velocidade</p>
-        </div>
-    </div>`;
-
-document.getElementById('wheaterNow').innerHTML = tempoAgora;
+    if (menu.style.right === "0px") {
+      menu.style.right = "-250px";
+      menuIcon.style.display = "block";
+    } else {
+      menu.style.right = "0";
+      menuIcon.style.display = "none";
+    }
+  }
