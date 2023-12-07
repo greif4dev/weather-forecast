@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Perfil do Cliente</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-gOqfT5FQdDlR5PFNE8/Z9mNE5ZR8B7DOJ46MqE5K7e0Unki6UOapPPMO8K+1Nlq" crossorigin="anonymous">
+{% extends 'base.html'%}
+  {% block title %}
+      Wheater Forecast
+  {% endblock %}
+  {% block content %}
   <style>
     body {
       margin: 0;
@@ -285,7 +283,7 @@ button {
 <body>
 
     <h1>JVV WEATHER</h1>
-
+    <div id="menu"></div>
     <div class="container2">
         <div class="profile-icon-container custom-icon">
           <img src="{{ url_for('static', filename='images/perfil1.ico') }}" alt="Ícone de Perfil" class="profile-icon">
@@ -308,7 +306,6 @@ button {
     
 
       <div class="container">
-        <h2 class="perfil-title">Meu perfil</h2>
         <h1 class="sub-title">Visualize e edite suas informações pessoais abaixo.</h1>
         <p class="texto-nome">Nome</p>
         <input type="text" placeholder="Victor" class="input-field input-nome">
@@ -333,6 +330,4 @@ button {
           </div>
       </div>     
   </div>
-</body>
-</html>
-
+  {% endblock %}
