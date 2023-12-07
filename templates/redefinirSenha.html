@@ -1,0 +1,183 @@
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #004aad;
+    }
+
+    #title {
+      font-family: 'Pathway Gothic One', sans-serif; /* Fonte Pathway Gothic One */
+      font-size: 22pt;
+      letter-spacing: 0.1pt;
+      color: #fff; /* Cor branca ajustada */
+      font-weight: bold; /* Negrito ajustado */
+      position: absolute;
+      margin-top: -700px;
+      text-align: left;
+      margin-left: -1550px;
+    }
+
+    .container {
+      background-color: #fffcfc;
+      padding: 50px;
+      border-radius: 10px;
+      width: 70spx;
+      margin-top: 10px;
+      text-align: center; /* Centralizar o texto dentro do contêiner */
+      margin: auto; 
+    }
+
+    .left-align {
+      text-align: left; /* Alinhar à esquerda os rótulos com essa classe */
+    }
+
+    .label-text {
+      display: block;
+      text-align: left;
+      margin-bottom: 2px; /* Ajuste para reduzir o espaço entre rótulos e campos de senha */
+      font-family: 'Open Sans', sans-serif; /* Fonte Open Sans */
+      font-size: 10pt;
+      margin-top: 15px;
+    }
+
+    input {
+      border-radius: 5px;
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      box-sizing: border-box;
+      margin: 10px 0; /* Ajuste para reduzir o espaço entre campos de senha */
+      border: 1px solid #ddd; /* Cor e espessura da borda ajustadas */
+      border-radius: 5px; /* Bordas mais suavizadas */
+      color: #555; /* Cor do texto dentro do campo ajustada */
+    }
+
+    .button-container {
+      text-align: left; /* Alinhar o botão à esquerda dentro da nova div */
+      margin-top: 10px; /* Ajuste para espaçamento entre o último campo e o botão */
+    }
+
+    button {
+      background-color: #004aad;
+      color: #fffcfc;
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 30px;
+      margin-left: 0;
+      width: 40%;
+    }
+
+    .button-text {
+      display: inline-block;
+      width: 100%; /* Ocupar a largura total do botão */
+      text-align: center; /* Centralizar o texto dentro do botão */
+      
+    }
+
+    .clear-button {
+      background-color: transparent; /* Cor de fundo transparente */
+      color: #004aad; /* Cor do texto do novo botão */
+      margin-left: 75px; /* Espaço à esquerda para separar os botões */
+      text-decoration: underline; /* Sublinhar o texto */
+      font-size: 10pt;
+    }
+
+     /* Adicionei um estilo para o parágrafo abaixo do título */
+     #password-rule {
+      margin-top: -20px; /* Ajuste para reduzir o espaço entre o título e o parágrafo */
+     }
+
+     #menu {
+      position: fixed;
+      top: 0;
+      right: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: #004aad;
+      padding-top: 60px; /* Adjusted padding to account for the top bar */
+      transition: 0.3s;
+      z-index: 1;
+    }
+
+    #menu a {
+      padding: 15px 10px;
+      text-decoration: none;
+      font-size: 20px;
+      color: #ffffff;
+      display: block;
+      transition: 0.3s;
+    }
+
+    #menu a:hover {
+      background-color: #00357c;
+    }
+
+    #menu .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 30px;
+      cursor: pointer;
+      color: #ffffff;
+    }
+
+    #menu-icon {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      font-size: 30px;
+      cursor: pointer;
+      color: #ffffff;
+      z-index: 2;
+    }
+
+  </style>
+</head>
+<body>
+  <p id="title">JVV WEATHER</p>
+  <div class="container">
+    <h1>Redefinir Senha</h1>
+    <p id="password-rule">Sua senha deve conter no mínimo 8 e no máximo 30 caracteres.</p>
+    <br>
+    <label for="currentPassword" class="label-text left-align">Senha Atual</label>
+    <input type="text" id="currentPassword" name="currentPassword" onfocus="clearExampleText(this)" value="Digite sua senha atual" class="example-text">
+
+    <label for="newPassword" class="label-text left-align">Nova Senha</label>
+    <input type="text" id="newPassword" name="newPassword" onfocus="clearExampleText(this)" value="Digite sua nova senha" class="example-text">
+
+    <label for="confirmPassword" class="label-text left-align">Confirmar Senha</label>
+    <input type="text" id="confirmPassword" name="confirmPassword" onfocus="clearExampleText(this)" value="Confirme sua nova senha" class="example-text">
+
+    <div class="button-container">
+      <a href="/">
+        <button type="button" class="left-align">
+          <span class="button-text">Confirmar</span>
+        </button>
+      </a>
+      <button type="button" class="clear-button left-align" onclick="clearFields()">Limpar</button>
+    </div>
+  </div>
+
+  <script>
+    function clearFields() {
+      document.getElementById("currentPassword").value = "";
+      document.getElementById("newPassword").value = "";
+      document.getElementById("confirmPassword").value = "";
+    }
+
+    function clearExampleText(element) {
+      if (element.value === element.defaultValue) {
+        element.value = "";
+        element.classList.remove("example-text");
+      }
+    }
+  </script>
+</body>
+</html>

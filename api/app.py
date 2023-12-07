@@ -19,5 +19,9 @@ def index():
 def login():
     return render_template("tela-login.html")
 
+@app.route("/redefinir")
+def redefinir():
+    return render_template("redefinirSenha.html")
+
 if __name__ == '__main__':
     app.run(debug=True)
