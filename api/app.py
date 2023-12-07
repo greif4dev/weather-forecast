@@ -3,7 +3,7 @@ from weather import main as getWeather
 
 app= Flask(__name__, template_folder='../templates', static_folder='../static')
 
-@app.route("/", methods=['GET', 'POST'])
+@app.route("/home", methods=['GET', 'POST'])
 def index():
     data = None
     vento = ''
@@ -14,6 +14,10 @@ def index():
         vento = 'Vento'
         previa = ''
     return render_template("index.html", data=data, vento=vento, previa=previa)
+
+@app.route("/")
+def login():
+    return render_template("tela-login.html")
 
 if __name__ == '__main__':
     app.run(debug=True)

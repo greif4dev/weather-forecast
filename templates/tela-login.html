@@ -1,0 +1,169 @@
+{% extends 'base.html'%}
+    {% block title %}
+        Login
+    {% endblock %}
+    {% block content %}
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #004aad;
+    }
+
+    #title {
+      font-family: 'serif';
+      font-size: 22pt;
+      letter-spacing: 0.1pt;
+      color: #fff; /* Cor branca ajustada */
+      font-weight: bold; /* Negrito ajustado */
+      position: absolute;
+      margin-top: -700px;
+      text-align: left;
+      margin-left: -1550px;
+    }
+
+    .container {
+      background-color: #fffcfc;
+      padding: 50px;
+      border-radius: 10px;
+      width: 30%;
+      margin-top: 10px;
+      text-align: center; /* Centralizar o texto dentro do contêiner */
+      margin: auto; 
+    }
+
+    .left-align {
+      text-align: left; /* Alinhar à esquerda os rótulos com essa classe */
+    }
+
+    .label-text {
+      display: block;
+      text-align: left;
+      margin-bottom: 2px; /* Ajuste para reduzir o espaço entre rótulos e campos de senha */
+      font-family: 'Open Sans', sans-serif; /* Fonte Open Sans */
+      font-size: 10pt;
+      margin-top: 15px;
+    }
+
+    input {
+      border-radius: 5px;
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      box-sizing: border-box;
+      margin: 10px 0; /* Ajuste para reduzir o espaço entre campos de senha */
+      border: 1px solid #ddd; /* Cor e espessura da borda ajustadas */
+      border-radius: 5px; /* Bordas mais suavizadas */
+      color: #555; /* Cor do texto dentro do campo ajustada */
+    }
+
+    .button-container {
+      text-align: left; /* Alinhar o botão à esquerda dentro da nova div */
+      margin-top: 10px; /* Ajuste para espaçamento entre o último campo e o botão */
+    }
+
+    button {
+      background-color: #004aad;
+      color: #fffcfc;
+      padding: 15px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 50px;
+      margin-left: 0;
+      width: 30%;
+    }
+
+    .button-text {
+      display: inline-block;
+      width: 100%; /* Ocupar a largura total do botão */
+      text-align: center; /* Centralizar o texto dentro do botão */
+      white-space: nowrap; /* Impede a quebra de linha */
+      word-wrap: break-word; /* Permite a quebra de palavra */
+      font-size: 11pt;
+    }
+
+    .cadastrar-button {
+      background-color: transparent;
+      color: #004aad;
+      margin-left: 80px; /* Ajustado para 0 para garantir que a margem seja aplicada corretamente */
+      text-decoration: underline;
+      font-size: 11pt;
+      white-space: nowrap; /* Impede a quebra de linha */
+      word-wrap: break-word; /* Permite a quebra de palavra */
+    }
+
+     /* Adicionei um estilo para o parágrafo abaixo do título */
+     #password-rule {
+      margin-top: -20px; /* Ajuste para reduzir o espaço entre o título e o parágrafo */
+     }
+  
+     .forgot-password {
+    text-align: right;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #a4a0a4;; /* Cor do texto */
+    cursor: pointer;
+    text-decoration: underline;
+
+  }
+
+  .header-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      justify-content: center; /* Adicionado para centralizar horizontalmente */
+
+    }
+
+    .header-container img {
+      width: auto; /* Ajustado para manter a proporção original do ícone */
+      height: 5em; /* Definido para a altura da linha de texto */
+      margin-right: 1px;
+    }
+
+    .header-container h1 {
+      margin: 0;
+      font-size: 2em; /* Definido para a altura da linha de texto */
+      font-family: 'Pathway Gothic One', sans-serif;
+      margin-right: 25px;
+    }
+  </style>
+  <div class="container">
+    <div class="header-container">
+      <img src="{{ url_for('static', filename='images/icone.ico') }}" alt="Ícone">
+      <h1>JVV WEATHER</h1>
+    </div>
+    <h2>Entrar</h2>
+
+    <label for="currentPassword" class="label-text left-align">Email</label>
+    <input type="text" id="currentPassword" name="currentPassword" onfocus="clearExampleText(this)" value="email@exemplo.com" class="example-text">
+
+    <label for="newPassword" class="label-text left-align">Senha</label>
+    <input type="text" id="newPassword" name="newPassword" onfocus="clearExampleText(this)" value="Digite sua senha" class="example-text">
+
+    <p class="forgot-password">Recuperar senha</p>
+    
+    <div class="button-container">
+        <a href="/home">
+          <button type="button" class="left-align">
+            <span class="button-text">ENTRAR</span>
+          </button>
+        </a>
+        <button type="button" class="cadastrar-button" onclick="clearFields()">CADASTRE-SE GRÁTIS</button>
+      </div>
+  </div>
+{% endblock %}
+<script>
+  function clearExampleText(element) {
+    if (element.value === element.defaultValue) {
+      element.value = "";
+      element.classList.remove("example-text");
+    }
+  }
+</script>
+
